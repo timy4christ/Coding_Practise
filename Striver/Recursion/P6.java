@@ -1,4 +1,5 @@
 // Program 6: Print sum of N natural numbers, using parameterized recursion
+// parameterized recursion is used to make the function just do the work and also print it through the function
 
 import java.util.*;
 

@@ -1,43 +1,26 @@
-import java.io.IOException;
-
 class test {
-    public static void main(String args[]) throws IOException {
-        System.out.println("In main");
-        try {
-            myFun1();
-        } catch (ArrayIndexOutOfBoundsException ae) {
+	public static void main(String args[]) {
+		System.out.println("Program started execution");
+		int a = -1;
+		try {
+			try {
+				if (a < 0) {
+					ArithmeticException ae = new ArithmeticException("value can not be negative");
+					throw ae;
+				}
+				System.out.println("Out of if block");
+			} catch (ArithmeticException e) {
+				System.out.println("Arithmetic exception caught in inner catch : " + e.getMessage());
+				throw e; // rethrowing an exception
+			} catch (Exception e) {
+			} finally {
+				System.out.println("finally block");
+			}
+		} catch (ArithmeticException e) {
+			System.out.println("Exception caught in outer catch: " + e.getMessage());
+		}
 
-        }
-        // catch(ArithmeticException e){
+		System.out.println("Program terminated successfully");
 
-        // }
-        // catch(IOException e){
-        // System.out.println("In IOException catch block: " + e.getMessage());
-        // }
-        System.out.println("Hello");
-    }
-
-    public static void myFun1() throws IOException {
-        myFun2();
-    }
-
-    public static void myFun2() throws IOException {
-
-        System.out.println("In myFun");
-        try {
-            throw new IOException();
-            // throw new ArithmeticException();
-        } catch (ArrayIndexOutOfBoundsException ae) {
-
-        }
-        // catch(ArithmeticException z){
-
-        // }
-        // catch(IOException e){
-        // System.out.println("In IOException catch block");
-        // // throw e;
-        // }
-
-        // res = a/b;
-    }
+	}
 }

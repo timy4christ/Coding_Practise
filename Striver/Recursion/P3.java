@@ -1,4 +1,4 @@
-// Program 3: print linearly from n to 1
+// Program 3: print linearly from n to 1 
 
 import java.util.*;
 
