@@ -1,4 +1,4 @@
-// Program 17: Find fibonacci series recursion ( multiple recursion )
+// Program 17: Find fibonacci series recursion (multiple recursion )
 // has order of approx. 2^n (exponential in nature) : which is not good can be improved by dp
 
 import java.util.*;

@@ -38,7 +38,7 @@ class TicTacToe{
 				}
 			}
 			
-			String res = checkWinner(gameBoard);
+			String res = checkWinner();
 			if(!res.isEmpty()){
 				printBoard(gameBoard);
 				System.out.println(res);
@@ -58,7 +58,7 @@ class TicTacToe{
 				}
 			}
 			
-			res = checkWinner(gameBoard);
+			res = checkWinner();
 			if(!res.isEmpty()){
 				printBoard(gameBoard);
 				System.out.println(res);
@@ -125,7 +125,7 @@ class TicTacToe{
 		}
 	}
 	
-	public static String checkWinner(char[][] gameBoard){
+	public static String checkWinner(){
 		
 		List topRow = Arrays.asList(1, 2, 3);
 		List midRow = Arrays.asList(4, 5, 6);

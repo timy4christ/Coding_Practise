@@ -1,0 +1,56 @@
+class BubbleSort{
+	
+	public static void main(String[] args){
+		
+		 //int[] arr={64, 25, 12, 22, 11};
+		int[] arr={10,20,30,40,50};
+		
+		System.out.println("Original Array: ");
+		display(arr);
+		
+		System.out.println();
+		sort(arr);
+		
+		
+		System.out.println("\nSorted Array is:");
+		display(arr);
+		
+	}
+	
+	
+	public static void sort(int[] arr){
+		
+		int n =arr.length;
+		
+		for(int i=0; i<n-1; i++){
+			
+			boolean swapped = false;
+			
+			// for(int j=0; j<n-1; j++){ // each round will have n-1 iterations
+			for(int j=0; j<n-i-1; j++){  // optimised to n-i iternations per round,	
+				if(arr[j] > arr[j+1]){
+					swap(arr,j,j+1);
+					swapped = true;
+				}
+				System.out.print("Round " + (i+1) + ": ");
+				display(arr);
+				if(swapped==false)
+					break;
+			}
+		}
+		
+		
+	}
+	
+	public static void swap(int[] arr, int j, int midIndex){
+		int temp = arr[j];
+		arr[j] = arr[midIndex];
+		arr[midIndex] = temp;
+	}
+	
+	public static void display(int[] arr){
+		for(int x : arr)
+			System.out.print(x + " ");
+		System.out.println();
+	}
+}
