@@ -1,4 +1,4 @@
-class SimpleQueue{
+class SimpleQueueArray{
 	
 	int arr[];
 	int front;
@@ -37,8 +37,8 @@ class SimpleQueue{
 		}
 		else {
 			if(front == -1){
-				front++;
-				rear++;	
+				front = 0;
+				rear = 0;	
 			}
 			
 			else{
@@ -71,30 +71,34 @@ class SimpleQueue{
 	
 	public int size(){
 		
-		if()
+		if(isEmpty()) return 0;
 		
 		return rear - front + 1;
 	}
 	
 	public static void main(String[] args){
 		
-		SimpleQueue sq = new SimpleQueue(5);
+		SimpleQueueArray sq = new SimpleQueueArray(5);
 		
 		System.out.println("Size: " + sq.size());
 		sq.enQueue(10);
 		sq.enQueue(20);
 		sq.enQueue(30);
+		System.out.println("Size: " + sq.size());
 		sq.enQueue(40);
 		sq.enQueue(50);
 		sq.enQueue(60);
+		System.out.println("Size: " + sq.size());
 		
 		sq.deQueue();
 		sq.deQueue();
 		sq.deQueue();
+		System.out.println("Size: " + sq.size());
 		sq.deQueue();
 		sq.deQueue();
 		sq.deQueue();
 		
+		System.out.println("Size: " + sq.size());
 		
 		
 		
